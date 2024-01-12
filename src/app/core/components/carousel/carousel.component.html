@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="arrow__btn left-arrow" (click)="onLeft()">‹</div>
+  <div [id]="generateId" class="carousel-container">
+    <div class="card" *ngFor="let da of data">
+      <img
+        [src]="da.image.medium"
+        alt="Describe Image">
+      </div>
+    </div>
+    <div class="arrow__btn right-arrow" (click)="onRight()">›</div>
+</div>

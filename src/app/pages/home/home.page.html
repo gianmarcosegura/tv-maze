@@ -1,0 +1,18 @@
+<app-header />
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Gianmarco</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!-- Shows By Rating -->
+  <h2 class="">Mejor valorados</h2>
+  <app-carousel *ngIf="showsByRating && showsByRating.length" [data]="showsByRating" />
+  <div *ngIf="genres && genres.length">
+    <div *ngFor="let genre of genres; index as i">
+      <h2>{{genre}}</h2>
+      <app-carousel *ngIf="showsByGenre[i] && showsByGenre[i].length" [data]="showsByGenre[i]" [index]="i"/>
+    </div>
+  </div>
+</ion-content>
