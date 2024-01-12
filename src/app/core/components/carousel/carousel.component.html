@@ -1,11 +1,12 @@
 <div class="container">
-  <div class="arrow__btn left-arrow" (click)="onLeft()">‹</div>
+  <div class="arrow__btn left-arrow" (click)="onSlide('left')">‹</div>
   <div [id]="generateId" class="carousel-container">
-    <div class="card" *ngFor="let da of data">
-      <img
-        [src]="da.image.medium"
-        alt="Describe Image">
+    <div class="card" *ngFor="let show of shows">
+        <img
+          routerLink="/home/show/{{show.id}}"
+          [src]="show.image.medium"
+          alt="Describe Image">
       </div>
     </div>
-    <div class="arrow__btn right-arrow" (click)="onRight()">›</div>
+    <div class="arrow__btn right-arrow" (click)="onSlide('right')">›</div>
 </div>

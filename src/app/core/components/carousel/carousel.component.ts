@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Show } from 'src/app/shared/models';
 
 @Component({
   selector: 'app-carousel',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CarouselComponent  implements OnInit {
 
-  @Input() data: any = [];
+  @Input() shows: Show[] = [];
   @Input() index: number | undefined;
 
   public generateId: string = '';
@@ -18,25 +19,14 @@ export class CarouselComponent  implements OnInit {
     this.generateId = `carousel-${this.index}`
   }
 
-  onLeft = () => {
+  onSlide = (direction: string) => {
     let container = document.querySelector(`#${this.generateId}`);
     if(container) {
 			container.scrollTo({
-				left:container.scrollLeft - 800,
+				left:container.scrollLeft - (direction === 'left' ? + 800 : - 800),
 				top: 0,
 				behavior: "smooth"
 			});
-    }
-  }
-
-  onRight = () => {
-    let container = document.querySelector(`#${this.generateId}`);
-    if(container) {
-      container.scrollTo({
-        left:container.scrollLeft + 800,
-        top: 0,
-        behavior: "smooth"
-      });
     }
   }
 

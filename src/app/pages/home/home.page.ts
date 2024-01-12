@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ShowsService } from 'src/app/core/services/shows.services';
+import { Show } from 'src/app/shared/models';
 
 @Component({
   selector: 'app-home',
@@ -11,31 +12,31 @@ import { ShowsService } from 'src/app/core/services/shows.services';
 
 export class HomePage implements OnInit, OnDestroy {
 
-  public showsByRating = [];
-  public showsByGenre: any[] = [];
+  public showsByRating: Show[] = [];
+  public showsByGenre: Show[] = [];
   public genres: string[] =[];
   public subscription: Subscription | undefined;
 
   constructor(private service: ShowsService) {}
 
   ngOnInit(): void {
-    this.subscription = this.service.getShows().subscribe((result: any) => {
-      this.showsByRating = this.getShowsByRating(result);
-      this.genres = this.getShowsGenres(result).sort();
+    this.subscription = this.service.getShows().subscribe((result) => {
+      this.showsByRating = this.getShowsByRating(result as Show[]);
+      this.genres = this.getShowsGenres(result as Show[]).sort();
       this.showsByGenre = this.genres.map((genre: string) => this.getShowsByGenre(result, genre))
     });
   }
 
-  getShowsByRating = (shows: any) => shows.sort((a: any, b: any) => b.rating.average - a.rating.average);
+  getShowsByRating = (shows: Show[]) => shows.sort((a: Show, b: Show) => b.rating.average - a.rating.average);
 
-  getShowsGenres = (shows: any) => {
+  getShowsGenres = (shows: Show[]) => {
     const genres: string[] = [];
-    shows.forEach((el: any) => el.genres.forEach((elo: never) => genres.push(elo)))
+    shows.forEach((el: Show) => el.genres.forEach((genre: string) => genres.push(genre)))
     return [...new Set(genres)]
   }
 
   getShowsByGenre = (shows: any, genre: string) =>
-    shows.map((element: any) =>
+    shows.map((element: Show) =>
       element.genres.includes(genre) ? element : null
     ).filter(Boolean)
 
