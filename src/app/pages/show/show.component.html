@@ -1,3 +1,30 @@
-<p>
-  show works!
-</p>
+<ion-content class="ion-padding">
+  <h1 *ngIf="showName">
+    <a routerLink=".."
+      ><mat-icon fontIcon="keyboard_backspace" class="icon" /></a
+    >{{ showName }}
+  </h1>
+  <div>
+    <mat-tab-group class="tab">
+      <mat-tab label="Main" class="tab">
+        <app-main *ngIf="id" [id]="id" />
+      </mat-tab>
+      <mat-tab label="Episodes">
+        <ng-template matTabContent>
+          <app-episodes *ngIf="id" [id]="id" />
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Cast">
+        <ng-template matTabContent>
+          <app-cast *ngIf="id" [id]="id" />
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Crew">
+        <ng-template matTabContent>
+          <app-crew *ngIf="id" [id]="id" />
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+    <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+  </div>
+</ion-content>

@@ -1,0 +1,22 @@
+<div *ngIf="show" class="container">
+  <div class="info">
+    <img [src]="show.image.medium" alt="Describe Image" />
+    <div class="description" [innerHTML]="show.summary"></div>
+  </div>
+  <mat-chip-listbox>
+    <mat-chip-option disabled *ngFor="let genre of show.genres">{{
+      genre
+    }}</mat-chip-option>
+  </mat-chip-listbox>
+  <p>Rating: {{ show.rating.average }}</p>
+  <p>Language: {{ show.language }}</p>
+  <p>
+    Official Site:
+    <a
+      href="{{ show.officialSite }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      >{{ show.officialSite }}</a
+    >
+  </p>
+</div>

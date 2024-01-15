@@ -1,0 +1,13 @@
+<div *ngIf="crew" class="container">
+  <div *ngFor="let c of crew">
+    <div class="card">
+      <a
+        class="ancord"
+        href="{{ c.person.url }}"
+        target="_blank"
+        rel="noopener noreferrer">
+        <div>{{ c.person.name }}</div>
+      </a>
+    </div>
+  </div>
+</div>

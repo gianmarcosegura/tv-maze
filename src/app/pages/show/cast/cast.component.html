@@ -1,0 +1,14 @@
+<div *ngIf="cast" class="container">
+  <div *ngFor="let c of cast">
+    <div class="card">
+      <a
+        class="ancord"
+        href="{{ c.person.url }}"
+        target="_blank"
+        rel="noopener noreferrer">
+        <img [src]="c.person.image.medium" alt="Describe Image" />
+        <div>{{ c.person.name }}</div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+$duration: 250ms;
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    display: inline-block;
+    cursor: pointer;
+    max-height: 295px;
+    min-width: 210px;
+    margin: 20px;
+    transition: $duration all;
+    &:hover {
+        transform: scale(1.1);
+    }
+  }
+  .ancord {
+    text-decoration: none;
+    color: aliceblue;
+  }

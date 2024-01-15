@@ -9,8 +9,8 @@ describe('CarouselComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CarouselComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [CarouselComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CarouselComponent);

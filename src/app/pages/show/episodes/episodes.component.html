@@ -1,0 +1,19 @@
+<div class="container">
+  <table
+    *ngIf="episodes"
+    mat-table
+    [dataSource]="episodes"
+    class="mat-elevation-z8">
+    <ng-container
+      *ngFor="let column of displayedColumns"
+      matColumnDef="{{ column }}">
+      <th mat-header-cell *matHeaderCellDef>{{ column.toUpperCase() }}</th>
+      <td mat-cell *matCellDef="let element" (click)="goToLink(element.url)">
+        {{ element[column] }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
