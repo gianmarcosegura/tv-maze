@@ -1,25 +1,25 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ShowsService } from 'src/app/core/services/shows.services';
+import { ShowsService } from 'src/app/services/shows.services';
 
 @Component({
-  selector: 'app-crew',
-  templateUrl: './crew.component.html',
-  styleUrls: ['./crew.component.scss'],
+  selector: 'app-cast',
+  templateUrl: './cast.component.html',
+  styleUrls: ['./cast.component.scss'],
 })
-export class CrewComponent implements OnInit, OnDestroy {
+export class CastComponent implements OnInit, OnDestroy {
   @Input() id: string | undefined = undefined;
 
   public subscription: Subscription | undefined = undefined;
-  public crew: never[] = [];
+  public cast: any = [];
 
   constructor(private service: ShowsService) {}
 
   ngOnInit() {
     if (this.id) {
       this.subscription = this.service
-        .getShowCrew(this.id)
-        .subscribe((response: any) => (this.crew = response));
+        .getShowCast(this.id)
+        .subscribe(response => (this.cast = response));
     }
   }
 

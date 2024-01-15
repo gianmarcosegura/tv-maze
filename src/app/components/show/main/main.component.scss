@@ -1,0 +1,23 @@
+.container {
+    padding: 10px;
+}
+
+.info {
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+
+.description {
+    padding:  0;
+}
+
+$breakpoint-medium: 768px;
+@media (min-width: $breakpoint-medium) {
+  .info {
+    flex-direction: row;
+  }
+  .description {
+    padding: 0 20px;
+  }
+}

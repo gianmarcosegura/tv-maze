@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ShowsService } from 'src/app/core/services/shows.services';
+import { ShowsService } from 'src/app/services/shows.services';
 
 @Component({
   selector: 'app-show',

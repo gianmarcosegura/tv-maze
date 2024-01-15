@@ -4,7 +4,8 @@
     <ion-searchbar
       placeholder="Search"
       [debounce]="1000"
-      (ionInput)="handleInput($event)" />
+      (ionInput)="handleInput($event)"
+    />
   </ion-toolbar>
 </ion-header>
 
@@ -19,14 +20,16 @@
     <h2 *ngIf="showsByRating && showsByRating.length" class="">Top Rated</h2>
     <app-carousel
       *ngIf="showsByRating && showsByRating.length"
-      [shows]="showsByRating" />
+      [shows]="showsByRating"
+    />
     <div *ngIf="genres && genres.length">
       <div *ngFor="let genre of genres; index as i">
         <h2>{{ genre }}</h2>
         <app-carousel
           *ngIf="showsByGenre[i] && showsByGenre[i].length"
           [shows]="showsByGenre[i]"
-          [index]="i" />
+          [index]="i"
+        />
       </div>
     </div>
   </div>
@@ -37,7 +40,8 @@
           <img
             routerLink="/show/{{ show.id }}"
             [src]="show.image.medium"
-            alt="Describe Image" />
+            alt="Describe Image"
+          />
         </div>
       </div>
     </div>

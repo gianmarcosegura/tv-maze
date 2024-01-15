@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Show } from 'src/app/shared/models';
+import { Show } from 'src/app/shared/models/models';
 
 @Component({
   selector: 'app-carousel',
@@ -22,7 +22,7 @@ export class CarouselComponent implements OnInit {
     const container = document.querySelector(`#${this.generateId}`);
     if (container) {
       container.scrollTo({
-        left: container.scrollLeft - (direction === 'left' ? +800 : -800),
+        left: container.scrollLeft - (direction === 'left' ? +400 : -400),
         top: 0,
         behavior: 'smooth',
       });

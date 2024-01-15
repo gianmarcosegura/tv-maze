@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
+import { HomeComponent } from './home.component';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { HomeComponentRoutingModule } from './home-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { CarouselComponent } from 'src/app/core/components/carousel/carousel.component';
+import { CarouselComponent } from 'src/app/shared/components/carousel/carousel.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
+    HomeComponentRoutingModule,
     HttpClientModule,
   ],
-  declarations: [HomePage, CarouselComponent],
+  declarations: [HomeComponent, CarouselComponent],
 })
-export class HomePageModule {}
+export class HomeComponentModule {}

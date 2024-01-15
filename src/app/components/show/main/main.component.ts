@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { ShowsService } from 'src/app/core/services/shows.services';
-import { Show } from 'src/app/shared/models';
+import { ShowsService } from 'src/app/services/shows.services';
+import { Show } from 'src/app/shared/models/models';
 
 @Component({
   selector: 'app-main',

@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ShowsService } from 'src/app/core/services/shows.services';
+import { ShowsService } from 'src/app/services/shows.services';
 export interface PeriodicElement {
   name: string;
   position: number;

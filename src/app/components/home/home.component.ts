@@ -1,15 +1,15 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ShowsService } from 'src/app/core/services/shows.services';
-import { Show } from 'src/app/shared/models';
+import { ShowsService } from 'src/app/services/shows.services';
+import { Show } from 'src/app/shared/models/models';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  templateUrl: 'home.component.html',
+  styleUrls: ['home.component.scss'],
   providers: [ShowsService],
 })
-export class HomePage implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit, OnDestroy {
   public showsByRating: Show[] = [];
   public showsByGenre: Show[] = [];
   public genres: string[] = [];

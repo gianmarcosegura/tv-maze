@@ -5,12 +5,12 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('./pages/home/home.module').then(m => m.HomePageModule),
+      import('./components/home/home.module').then(m => m.HomeComponentModule),
   },
   {
     path: 'show/:id',
     loadChildren: () =>
-      import('./pages/show/show.module').then(m => m.ShowComponentModule),
+      import('./components/show/show.module').then(m => m.ShowComponentModule),
   },
   {
     path: '',
