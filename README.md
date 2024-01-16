@@ -1,7 +1,7 @@
 
 Como iniciar la App
-1. Situados en la raiz del proyecto, instalamos las dependencias con el comando "npm install" en la terminal
-2. Ejecutamos el comando "ionic serve" y el proyecto se levantará en localhost:8100
+1. Situados en la raiz del proyecto, instalamos las dependencias introduciendo el comando "npm ci" en la terminal para hacer una instalación limpia.
+2. Ejecutamos el comando "npm start" y el proyecto se levantará en localhost:8100
 
 
 - He utilizado la última versión estable de NodeJS y de npm

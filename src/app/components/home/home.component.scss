@@ -1,3 +1,5 @@
+$duration: 250ms;
+
 #container {
   text-align: center;
 
@@ -39,4 +41,10 @@
 
 .card {
   padding: 10px;
+  cursor: pointer;
+  transition: $duration all;
+  &:hover {
+    margin: 0 15px;
+    transform: scale(1.1);
+  }
 }
