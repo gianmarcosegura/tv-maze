@@ -1,7 +1,7 @@
 
 Como iniciar la App
 1. Situados en la raiz del proyecto, introducimos el comando "npm ci" en la terminal para realizar una instalación limpia de las dependencias del proyecto.
-2. Ejecutamos el comando "npm start" y el proyecto se levantará en localhost:8100
+2. Ejecutamos el comando "npm start" y el proyecto se levantará en localhost:4200
 
 
 - He utilizado la última versión estable de NodeJS y de npm
